@@ -1,0 +1,8 @@
+.dev.env
+.settings.json
+secret-*.yaml
+.git/
+.vscode/
+target/
+!target/x86_64-unknown-linux-musl/release/dino-park-evo
+**/.terraform/*
