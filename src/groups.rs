@@ -1,6 +1,7 @@
 use chrono::SecondsFormat;
 use chrono::Utc;
 use cis_profile::crypto::Signer;
+use cis_profile::schema::Display::Ndaed;
 use cis_profile::schema::KeyValue;
 use cis_profile::schema::Profile;
 use cis_profile::schema::PublisherAuthority::Mozilliansorg;
@@ -58,6 +59,11 @@ pub fn update_groups(
         .mozilliansorg
         .metadata
         .verified = true;
+    updated_profile
+        .access_information
+        .mozilliansorg
+        .metadata
+        .display = Some(Ndaed);
 
     signer.sign_attribute(&mut updated_profile.access_information.mozilliansorg)?;
 
